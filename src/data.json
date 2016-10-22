@@ -1,0 +1,9 @@
+{
+    "layout": "layout.twig",
+    "title": "One Template",
+    "benefits": [
+        "Fast",
+        "Flexible",
+        "Secure"
+    ]
+}

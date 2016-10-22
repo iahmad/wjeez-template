@@ -1,0 +1,16 @@
+{# index.twig #}
+{% extends layout %}
+
+{% block content %}
+    <header>
+        <h1> السلام على من إتّبع الهدى </h1>
+    </header>
+    <p>
+      Ready, except for url
+    </p>
+    <ul>
+        {% for value in benefits %}
+            <li>{{ value }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
