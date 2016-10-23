@@ -1,0 +1,9 @@
+{% extends layout %}
+{% block title %}{{post.title}} | {{ parent() }} {% endblock %}
+
+{% block content %}
+  <h1>{{post.title}}</h1>
+  <p>
+   {{post.content}}
+  </p>
+{% endblock %}

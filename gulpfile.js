@@ -46,7 +46,7 @@ gulp.task('js', function() {
 gulp.task('twig', function () {
     'use strict';
     var twig = require('gulp-twig');
-    return gulp.src('./src/index.twig')
+    return gulp.src('./src/**/*.twig')
         .pipe(data(function(file) {
           return require('./data.json');
         }))
@@ -68,6 +68,12 @@ gulp.task('twig', function () {
                     name: "block_options",
                     func: function (val) {
                         return require('./blocks/' + val)
+                    }
+                },
+                {
+                    name: "get_posts",
+                    func: function (val) {
+                        return require('./posts/' + val)
                     }
                 }
             ]

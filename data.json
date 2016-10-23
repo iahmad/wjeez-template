@@ -1,12 +1,8 @@
 {
     "layout": "layout.twig",
-    "assets": "assets",
+    "assets": "http://templates.dev/first/dist/assets",
+    "url": "http://templates.dev/first/dist",
     "site": {
         "title": "القالب الأول"
-    },
-    "benefits": [
-        "Fast",
-        "Flexible",
-        "Secure"
-    ]
+    }
 }

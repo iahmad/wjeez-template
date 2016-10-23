@@ -1,0 +1,37 @@
+{% extends layout %}
+{% block title %}{{page.title}} | {{ parent() }} {% endblock %}
+
+{% block content %}
+  <h1>{{page.title}}</h1>
+  <p>
+   {{page.content }}
+  </p>
+
+  {% set posts = get_posts("article") %}
+  {% if posts|length > 0 %}
+    {% for entry in posts %}
+      <!-- Post -->
+			<article class="post">
+        <h3><a href="{{url}}/page/post.html">{{entry.title}}</a></h3>
+        {% if entry.image is not null %}
+        <div class="row m-b">
+          <img src="{{cloud_path}}site/{{site.base.url}}/post/{{entry.image}}" alt="">
+        </div>
+        {% endif %}
+
+        <p>{{entry.content}}</p>
+			</article>
+			<!-- .post -->
+
+			{% endfor %}
+
+		  {% else %}
+			<div class="alert alert-warning">
+			  <strong>المعذرة</strong> لا توجد أي تدوينات بعد!
+			</div>
+		{% endif %}
+
+    {{ posts.render()|replace({ ("/?"): "?" }) | raw  }}
+
+
+{% endblock %}
