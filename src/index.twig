@@ -3,14 +3,33 @@
 
 {% block content %}
     <header>
-        <h1> السلام على من إتّبع الهدى </h1>
+        <h1> الصفحة الرئيسية </h1>
     </header>
-    <p>
-      Ready, except for url
-    </p>
+
+    <!-- About  -->
+
+    {% set about = block_item('about') %}
+  	<div class="container inforow m-y-1">
+  		<div class="col-sm-4">
+  			<h2 id="about" class="painted">{{about.title}}</h2>
+  		</div>
+  		<div class="col-sm-8">
+        <p>
+          {{about.content}}
+        </p>
+        {% if about.link is defined %}
+        <a href="{{about.link}}" class="btn btn-primary">{{about.linkText}}</a>
+        {% endif %}
+  		</div>
+  	</div>
+
+  	<!-- /.About -->
+    
+   {#
     <ul>
         {% for value in benefits %}
             <li>{{ value }}</li>
         {% endfor %}
     </ul>
+    #}
 {% endblock %}

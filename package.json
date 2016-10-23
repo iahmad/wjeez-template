@@ -10,14 +10,22 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
     "gulp-data": "^1.2.1",
     "gulp-jshint": "^2.0.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-require-file": "^1.1.2",
     "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.1.1",
     "gulp-twig": "^0.5.0",
+    "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.10",
+    "gutil": "^1.6.4",
     "jshint": "^2.9.4",
-    "jshint-stylish": "^2.2.1"
+    "jshint-stylish": "^2.2.1",
+    "require-dir": "^0.3.1"
   },
   "dependencies": {
     "gulp-twig": "^0.5.0"

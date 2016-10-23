@@ -1,19 +1,24 @@
-
 // grab our packages
-var gulp    = require('gulp'),
-    data    = require('gulp-data'),
-    jshint  = require('gulp-jshint'),
-    sass    = require('gulp-sass');
+var gulp        = require('gulp'),
+    data        = require('gulp-data'),
+    jshint      = require('gulp-jshint'),
+    concat      = require('gulp-concat'),
+    rename      = require('gulp-rename'),
+    uglify      = require('gulp-uglify'),
+    gutil       = require('gulp-util'),
+    sourcemaps  = require('gulp-sourcemaps'),
+    sass        = require('gulp-sass');
 
 
 // define task
-gulp.task('default',['sass','twig','jshint']);
+gulp.task('default',['sass','twig','jshint','js']);
+
 
 // sass task
 gulp.task('sass', function() {
   return gulp.src('./src/assets/scss/app.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./dist/assets/css'));
+    .pipe(gulp.dest('./dist/assets/css'))
 });
 
 
@@ -22,9 +27,20 @@ gulp.task('jshint', function() {
   return gulp.src('src/assets/js/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(gulp.dest('./dist/assets/js'));
 });
 
+
+// build js task (concat and uglify)
+gulp.task('js', function() {
+  return gulp.src('src/assets/js/**/*.js')
+    .pipe(sourcemaps.init())
+      .pipe(concat('bundle.js'))
+      .pipe(rename('app.js'))
+      .pipe(uglify())
+      // .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dist/assets/js'));
+});
 
 // twig task
 gulp.task('twig', function () {
@@ -32,19 +48,31 @@ gulp.task('twig', function () {
     var twig = require('gulp-twig');
     return gulp.src('./src/index.twig')
         .pipe(data(function(file) {
-          return require('./src/data.json');
+          return require('./data.json');
         }))
         .pipe(twig({
-            data: {
-                title: 'وحش',
-                benefits: [
-                    'Fast',
-                    'Flexible',
-                    'Secure'
-                ]
-            }
+            functions: [
+                {
+                    name: "block_items",
+                    func: function (val) {
+                        return require('./blocks/' + val)
+                    }
+                },
+                {
+                    name: "block_item",
+                    func: function (val) {
+                        return require('./blocks/' + val)[0]
+                    }
+                },
+                {
+                    name: "block_options",
+                    func: function (val) {
+                        return require('./blocks/' + val)
+                    }
+                }
+            ]
         }))
-        .pipe(gulp.dest('./dist/'));
+        .pipe(gulp.dest('./dist/'))
 });
 
 

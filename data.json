@@ -1,6 +1,9 @@
 {
     "layout": "layout.twig",
-    "title": "One Template",
+    "assets": "assets",
+    "site": {
+        "title": "القالب الأول"
+    },
     "benefits": [
         "Fast",
         "Flexible",

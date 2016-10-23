@@ -1,31 +1,50 @@
-
-<!DOCTYPE html>
-<html dir="rtl">
-<head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="description" content="A demo of how to use gulp-twig"/>
-    <meta name="author" content="Simon de Turck"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+ <!DOCTYPE html>
+<html dir="rtl" class="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="assets/css/app.css" media="screen" title="no title">
-    <title>One Template</title>
+    <title>القالب الأول</title>
+  </head>
+  <body>
+  	<h1>القالب الأول</h1>
+  	<hr />
 
-</head>
-<body>
-<section>
+          <li><a href="/home">الرئيسية</a></li>
+          <li><a href="/page/about">من نحن</a></li>
+          <li><a href="/page/blog">المدونة</a></li>
+          <li><a href="/page/contact">إتصل بنا</a></li>
+     
+    <hr>
+
         <header>
-        <h1> السلام على من إتّبع الهدى </h1>
+        <h1> الصفحة الرئيسية </h1>
     </header>
-    <p>
-      Ready, except for url
-    </p>
-    <ul>
-                    <li>Fast</li>
-                    <li>Flexible</li>
-                    <li>Secure</li>
-            </ul>
-</section>
 
-<script src="assets/js/app.js" charset="utf-8"></script>
-</body>
+    <!-- About  -->
+
+      	<div class="container inforow m-y-1">
+  		<div class="col-sm-4">
+  			<h2 id="about" class="painted">من نحن </h2>
+  		</div>
+  		<div class="col-sm-8">
+        <p>
+          خلافاَ للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في الأدب اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد، مما يجعله أكثر من 2000 عام في القدم. قام البروفيسور "ريتشارد ماك لينتوك" (Richard McClintock) وهو بروفيسور اللغة اللاتينية في جامعة هامبدن-سيدني في فيرجينيا بالبحث عن أصول كلمة لاتينية غامضة في نص لوريم إيبسوم وهي "consectetur"، وخلال تتبعه لهذه الكلمة في الأدب اللاتيني اكتشف المصدر الغير قابل للشك.
+        </p>
+                <a href="page/about" class="btn btn-primary">إعرف أكثر</a>
+          		</div>
+  	</div>
+
+  	<!-- /.About -->
+    
+   
+
+
+    <hr>
+    <h4>Floow us:</h4>
+          <li><a href="/home">تويتر</a></li>
+          <li><a href="/page/about">فيسبوك</a></li>
+    
+
+    <script src="assets/js/app.js" charset="utf-8"></script>
+  </body>
 </html>
