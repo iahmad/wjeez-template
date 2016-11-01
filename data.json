@@ -1,7 +1,7 @@
 {
     "layout": "layout.twig",
-    "assets": "http://templates.dev/first/dist/assets",
-    "url": "http://templates.dev/first/dist",
+    "assets": "http://templates.dev/template/dist/assets",
+    "url": "http://templates.dev/template/dist",
     "site": {
         "title": "القالب الأول"
     }
