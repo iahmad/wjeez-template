@@ -20,7 +20,8 @@ Then publish the files
 ```
 gulp
 ```
-or
+or, if you want to see your work on files in /src directory.
+
 ```
 gulp watch
 ```
@@ -29,9 +30,10 @@ if you want to see your work on files in /src directory.
 
 ### Done
 That was it!
+
 Please let me know if you get any issue or find any security bugs.
 
 ### Author
 
-Ahmad Alahmadi
-Github: @onemoreahmad
+- Ahmad Alahmadi
+- Github: @onemoreahmad
